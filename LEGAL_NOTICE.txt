@@ -1,0 +1,16 @@
+---------------------------------------------------------
+KVM INSTITUTION - BRANDING & TRADEMARK NOTICE
+---------------------------------------------------------
+The assets in this directory (including but not limited to 
+the KVM logo, typography, and institutional emblems) are 
+PROPRIETARY and are NOT covered by the project's 
+open-source license.
+
+Users are permitted to use the code from this repository, 
+but you MUST:
+1. Remove all KVM logos and branding.
+2. Replace them with your own identity.
+3. Not imply any affiliation with KVM Institution.
+
+Copyright © 2026 KVM Institution. All Rights Reserved.
+---------------------------------------------------------
