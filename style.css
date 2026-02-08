@@ -15,10 +15,10 @@ body {
 /* 2. THE FRAME */
 .page-wrapper {
     min-height: 100vh; /* Changed from height to min-height */
-    padding: 30px; /* This creates the dark blue border thickness */
+    padding: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* Changed back to stretch to enable vertical stretching */
     position: relative; /* For the pseudo-element background */
     overflow: hidden; /* Keep any background animation within bounds */
 }
@@ -44,7 +44,9 @@ body {
 .main-container {
     background-color: #F5F0E1; /* Cloud Dancer */
     width: 100%;
-    height: 100%;
+    /* Removed height: 100% to allow vertical stretching via parent's align-items: stretch */
+    max-width: 2600px; /* Corrected to 2600px */
+    /* Removed max-height to allow vertical stretching */
     border-radius: 60px;
     padding: 60px;
     display: flex;
