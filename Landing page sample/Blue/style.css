@@ -1,0 +1,187 @@
+/* 1. THE FOUNDATION */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0A2540; /* Midnight Blue */
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh; /* Use min-height to allow content to extend beyond viewport */
+    /* overflow: hidden; Removed to allow scrolling */
+}
+
+/* 2. THE FRAME */
+.page-wrapper {
+    height: 100vh;
+    padding: 30px; /* This creates the dark blue border thickness */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    background-color: #F5F0E1; /* Cloud Dancer */
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.7); /* Stronger shadow */
+    overflow-y: auto;
+}
+/* 3. NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #0A2540;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.8s ease-out forwards; /* Initial animation */
+    transform: scale(0.8); /* Start smaller */
+    opacity: 0; /* Start invisible */
+}
+
+.logo:hover {
+    color: #8D9A7A; /* Change color on hover */
+    text-shadow: 0 0 10px rgba(141, 154, 122, 0.8); /* Soft glow */
+}
+
+@keyframes scaleIn {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #0A2540;
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative; /* For the underline animation */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #0A2540;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+    background: #8D9A7A; /* Change color on hover for effect */
+}
+
+/* 4. LAYOUT SPLIT */
+.content-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Splits screen into 2 equal halves */
+    gap: 50px;
+    align-items: center;
+}
+
+/* 5. TYPOGRAPHY */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #0A2540;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.8s ease-out forwards 0.2s; /* Staggered animation */
+    opacity: 0;
+}
+
+p {
+    color: #4A4A4A;
+    font-size: 1.1rem;
+    max-width: 400px;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out forwards 0.4s; /* Staggered animation */
+    opacity: 0;
+}
+
+/* 6. BUTTONS */
+.cta-btn {
+    background-color: #8D9A7A; /* Sage Green */
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #0A2540;
+    transform: translateY(-3px) scale(1.02); /* Subtle scale up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Lifted shadow */
+}
+
+/* 7. THE BENTO GRID */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.item {
+    background: rgba(10, 37, 64, 0.9); /* Slightly transparent for glassy feel */
+    color: white;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    backdrop-filter: blur(5px); /* Glassy effect for items */
+    -webkit-backdrop-filter: blur(5px);
+    animation: fadeInUp 0.8s ease-out forwards; /* Apply animation */
+    opacity: 0; /* Start invisible */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.item:hover {
+    box-shadow: 0 0 30px rgba(141, 154, 122, 0.6); /* Glowing effect with sage green */
+    transform: translateY(-5px) scale(1.02); /* Slight lift and scale */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.featured {
+    grid-column: span 2;
+    background-color: #8D9A7A;
+    min-height: 250px;
+}
