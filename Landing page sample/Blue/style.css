@@ -14,22 +14,44 @@ body {
 
 /* 2. THE FRAME */
 .page-wrapper {
-    height: 100vh;
-    padding: 30px; /* This creates the dark blue border thickness */
+    min-height: 100vh; /* Changed from height to min-height */
+    padding: 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch; /* Changed back to stretch to enable vertical stretching */
+    position: relative; /* For the pseudo-element background */
+    overflow: hidden; /* Keep any background animation within bounds */
+}
+
+.page-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(141, 154, 122, 0.2) 0%, transparent 50%);
+    animation: backgroundGlow 15s infinite alternate ease-in-out;
+    z-index: -1; /* Place behind content */
+}
+
+@keyframes backgroundGlow {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
 }
 
 .main-container {
     background-color: #F5F0E1; /* Cloud Dancer */
     width: 100%;
-    height: 100%;
-    border-radius: 40px;
+    /* Removed height: 100% to allow vertical stretching via parent's align-items: stretch */
+    max-width: 2600px; /* Corrected to 2600px */
+    /* Removed max-height to allow vertical stretching */
+    border-radius: 60px;
     padding: 60px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.7); /* Stronger shadow */
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
     overflow-y: auto;
 }
 /* 3. NAVIGATION */
