@@ -1,0 +1,124 @@
+/* 1. THE FOUNDATION */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #002B2D; /* Midnight Blue */
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Keeps the "App" feel */
+}
+
+/* 2. THE FRAME */
+.page-wrapper {
+    height: 100vh;
+    padding: 30px; /* This creates the dark blue border thickness */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    background-color: #F0F4F4; /* Cloud Dancer */
+    width: 100%;
+    height: 100%;
+    border-radius: 40px; 
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    overflow-y: auto;
+}
+
+/* 3. NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #0A2540;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #005F63;
+    margin-left: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 4. LAYOUT SPLIT */
+.content-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Splits screen into 2 equal halves */
+    gap: 50px;
+    align-items: center;
+}
+
+/* 5. TYPOGRAPHY */
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    color: #002B2D;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #002B2D;
+    font-size: 1.1rem;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+/* 6. BUTTONS */
+.cta-btn {
+    background-color: #005F63; /* Sage Green */
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    border: none;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-btn:hover {
+    background-color: #002B2D;
+    transform: translateY(-3px);
+}
+
+/* 7. THE BENTO GRID */
+.bento-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.item {
+    background: #2D2D2D;
+    color: white;
+    padding: 30px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 150px;
+}
+
+.featured {
+    grid-column: span 2;
+    background-color: #8D9A7A;
+    min-height: 250px;
+}
